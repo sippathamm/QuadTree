@@ -10,11 +10,14 @@ std::chrono::steady_clock::time_point TimeBegin;
 std::chrono::steady_clock::time_point TimeEnd;
 
 int main() {
+    /* intial 2D Particle */
     const int N = 5000;
     const float Radius = 1.0f;
     std::vector<A2DParticle> ParticleArray(N);
+
     srand(static_cast<unsigned>(time(0)));
     
+    /* random 2D Particle position within x=1000 and y=1000 */
     for (int i = 0; i < N; i++) {
         float X = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 1000.0f)) * pow(-1, rand());
         float Y = static_cast<float>(rand()) / (static_cast<float>(RAND_MAX / 1000.0f)) * pow(-1, rand());
@@ -22,9 +25,11 @@ int main() {
         ParticleArray[i] = {Center, Radius};
     }
     
+    /* inital QuadTree */
     A2DRectangle Boundary({0.0f, 0.0f}, {1000.0f, 1000.0f});
     AQuadTree AQuadTree(Boundary);
     
+    /* insert all particles in QuadTree */
     for (auto & Each : ParticleArray) {
         AQuadTree.Insert(Each);
     }
@@ -35,7 +40,10 @@ int main() {
     for (int i = 0; i < N; i++) {
         A2DParticle CurrentParticle = ParticleArray[i];
         A2DCircle Range = {CurrentParticle.Center, CurrentParticle.Radius * 2};
+
+        /* query the given range in QuadTree */
         std::vector<A2DParticle*> ParticleInRange = AQuadTree.Query(Range);
+
         for (int j = 0; j < (int)ParticleInRange.size(); j++) {
             A2DParticle *OtherParticle = ParticleInRange[j];
             if (CurrentParticle == *OtherParticle) {
