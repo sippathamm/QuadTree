@@ -10,7 +10,7 @@ std::chrono::steady_clock::time_point TimeBegin;
 std::chrono::steady_clock::time_point TimeEnd;
 
 int main() {
-    /* intial 2D Particle */
+    /* initialize 2D Particle */
     const int N = 5000;
     const float Radius = 1.0f;
     std::vector<A2DParticle> ParticleArray(N);
@@ -25,7 +25,7 @@ int main() {
         ParticleArray[i] = {Center, Radius};
     }
     
-    /* inital QuadTree */
+    /* initialize QuadTree */
     A2DRectangle Boundary({0.0f, 0.0f}, {1000.0f, 1000.0f});
     AQuadTree AQuadTree(Boundary);
     
