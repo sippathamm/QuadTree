@@ -5,11 +5,8 @@ set(CMAKE_CXX_STANDARD 20)
 
 include_directories(include)
 
-set(SOURCE_FILES
-        source/main.cpp
-        include/QuadTree.h
-        source/QuadTree.cpp
+add_executable(QuadTree
         include/Geometry2D.h
-        source/Geometry2D.cpp)
-
-add_executable(QuadTree ${SOURCE_FILES})
+        include/QuadTree2D.h
+        source/Example.cpp
+)
