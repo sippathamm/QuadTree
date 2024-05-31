@@ -316,8 +316,8 @@ public:
   * |                                      |
   * | bottom-left             bottom-right |
   * ----------------------------------------
-  *                        <--------------->
-  *                        Half extent along x-axis.
+  *                     <------------------>
+  *                     Half extent along x-axis.
   */
 class A2DRectangle
 {
