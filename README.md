@@ -1,7 +1,7 @@
 # QuadTree2D &ndash; A collision detection algorithm
 
 A simple collision detection method, brute force algorithm, 
-that check every pair of objects in a scene, can be highly computationally 
+that checks every pair of objects in a scene, can be highly computationally 
 expensive, especially when dealing with a large number of objects. 
 This can lead to significant processing overheads, 
 resulting in decreased application performance and responsiveness. 
