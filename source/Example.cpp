@@ -1,6 +1,6 @@
 #include <iostream>
 #include <random>
-
+#include <chrono>
 #include "QuadTree2D.h"
 
 // Define macros for measuring time

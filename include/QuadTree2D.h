@@ -122,7 +122,7 @@ private:
         for (int Index = 0; Index < 4; Index++)
         {
             this->Children_.emplace_back(SubdivideRegion[Index]);
-            this->Children_[Index].CurrentDepth_++;
+            this->Children_[Index].CurrentDepth_=this->CurrentDepth_ + 1;
         }
 
         // Distribute particles from the current node to its child nodes
